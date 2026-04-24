@@ -14,6 +14,8 @@ git仓库
 `git add .`
 `git commit -m ''`
 `git switch main`
+## 表格
+| 上午 | 下午 |
 ## 任务
 - [x] 安装git
 - [x] 新建仓库
