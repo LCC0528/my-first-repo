@@ -23,3 +23,8 @@ git仓库
 - [x] 安装git
 - [x] 新建仓库
 - [ ] 掌握markdown
+- [ ] 图片引用
+## 图片
+![一张风景照](https://picx.zhimg.com/v2-792731f49be13733932eefbd051d6a09_r.jpg?source=2c26e567)
+
+> 注意及时保存
