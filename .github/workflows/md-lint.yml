@@ -1,0 +1,10 @@
+name: Markdown
+on: [push]
+jobs: 
+  check-md: 
+    runs-on: ubuntu-latest
+    steps: 
+    - name: 拉取仓库代码
+      uses: actions/checkout@v4
+    - name: 自动检查所有markdown文档
+      uses: DavidAnson/markdownlint-cli2-action@v15
