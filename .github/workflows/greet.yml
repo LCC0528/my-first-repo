@@ -4,5 +4,5 @@ jobs:
   great-task: 
     runs-on: ubuntu-latest
     steps: 
-      - name: 打印欢迎文字
+    - name: 打印欢迎文字
       run: echo "hello,opencode!"   
