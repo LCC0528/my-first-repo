@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- viewport 设置：适配手机端，保证页面在不同设备上正确缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人展示网站 - 编程实训作业</title>
+    <!-- 引入外部CSS样式文件 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ==================== 顶部欢迎标题区域 ==================== -->
+    <header class="header">
+        <div class="container">
+            <h1>你好，欢迎来到我的个人展示网站</h1>
+            <p class="subtitle">这是我的编程实训作业成果</p>
+        </div>
+    </header>
+
+    <!-- ==================== 主内容区域 ==================== -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- ---------- 个人介绍板块 ---------- -->
+            <section class="section" id="about">
+                <h2>个人介绍</h2>
+                <div class="card">
+                    <div class="avatar">
+                        <!-- 简单的头像占位符，后续可以换成你自己的图片 -->
+                        <span>个人头像</span>
+                    </div>
+                    <div class="info">
+                        <p><strong>姓名：</strong>李超超</p>
+                        <p><strong>学校：</strong>温州职业技术学院</p>
+                        <p><strong>专业：</strong>虚拟现实技术应用</p>
+                        <p><strong>年级：</strong>虚拟2501（如：2024级）</p>
+                        <p class="description">
+                            <strong>自我介绍：</strong><br>
+                            这里是你可以自由编辑的自我介绍文字。你可以介绍一下自己的兴趣爱好、
+                            学习目标、未来规划等内容。修改这里的文字即可自定义你的个人介绍。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ---------- 在校学习技能板块 ---------- -->
+            <section class="section" id="skills">
+                <h2>在校学习技能</h2>
+                <div class="skills-grid">
+                    <!-- 每个 skill-card 代表一个技能卡片，你可以复制粘贴增加更多 -->
+                    
+                    <!-- 技能卡片1 -->
+                    <div class="skill-card">
+                        <h3>HTML/CSS</h3>
+                        <p>网页制作基础，用于构建网页结构和样式布局</p>
+                        <!-- progress-bar 是技能进度条，style="width: XX%" 调整百分比 -->
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- 技能卡片2 -->
+                    <div class="skill-card">
+                        <h3>JavaScript</h3>
+                        <p>网页交互编程，实现动态效果和用户交互功能</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 60%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- 技能卡片3 -->
+                    <div class="skill-card">
+                        <h3>Python</h3>
+                        <p>后端开发入门，适合数据分析、人工智能等领域</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- 技能卡片4 -->
+                    <div class="skill-card">
+                        <h3>数据库</h3>
+                        <p>SQL语言和数据库管理，存储和管理数据</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 50%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- 如需添加更多技能，复制上面的 skill-card 代码块即可 -->
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- ==================== 页脚署名区域 ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 编程实训作业 - 个人展示网站</p>
+            <p>由你亲自制作，保留所有权利</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,324 @@
+/* ==================== 基础样式设置 ==================== */
+
+/* 重置浏览器默认样式，设置全局字体和颜色变量 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* 主题配色方案 - 护眼的绿色系配色 */
+    /* 你可以修改这些颜色值来自定义整体风格 */
+    --primary-color: #2d6a4f;      /* 主色调 - 深绿色 */
+    --secondary-color: #40916c;    /* 次要色 - 中绿色 */
+    --accent-color: #52b788;      /* 强调色 - 亮绿色 */
+    --bg-color: #f0f7f4;           /* 背景色 - 淡绿色 */
+    --text-color: #333333;        /* 正文文字颜色 */
+    --light-text: #666666;         /* 次要文字颜色 */
+    --card-bg: #ffffff;           /* 卡片背景色 - 白色 */
+    --border-color: #d8e2dc;      /* 边框颜色 */
+}
+
+body {
+    /* 设置全局字体：优先使用系统字体，保证在各平台显示一致 */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* 设置行高，增加文字可读性 */
+    line-height: 1.8;
+    /* 设置文字颜色 */
+    color: var(--text-color);
+    /* 设置页面背景色 */
+    background-color: var(--bg-color);
+}
+
+/* ==================== 容器样式 ==================== */
+
+/* 容器类：限制内容最大宽度并居中显示 */
+.container {
+    max-width: 960px;
+    /* margin: 上下 0，左右自动（居中） */
+    margin: 0 auto;
+    /* 内边距：手机端会适当缩小，参考后面的媒体查询 */
+    padding: 0 20px;
+}
+
+/* ==================== 顶部欢迎标题样式 ==================== */
+
+.header {
+    /* 渐变背景：从主色渐变到次要色 */
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    /* 内边距：上下60px，左右20px */
+    padding: 60px 20px;
+    /* 文字居中 */
+    text-align: center;
+    /* 阴影效果：增加层次感 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    /* 标题字号：响应式，手机端会变小（参考媒体查询） */
+    font-size: 2.5rem;
+    /* 文字颜色：白色 */
+    color: white;
+    /* 底部外边距 */
+    margin-bottom: 10px;
+    /* 文字加粗 */
+    font-weight: 700;
+    /* 设置英文字母间距 */
+    letter-spacing: 2px;
+}
+
+.header .subtitle {
+    /* 副标题字号 */
+    font-size: 1.2rem;
+    /* 副标题颜色：半透明白色 */
+    color: rgba(255, 255, 255, 0.9);
+    /* 去掉标题默认的外边距 */
+    margin-top: 0;
+}
+
+/* ==================== 主内容区域样式 ==================== */
+
+.main-content {
+    /* 内容区域的内边距 */
+    padding: 40px 0;
+}
+
+/* 每个内容板块的样式 */
+.section {
+    /* 底部外边距：分隔各个板块 */
+    margin-bottom: 50px;
+}
+
+.section h2 {
+    /* 板块标题样式 */
+    font-size: 1.8rem;
+    /* 使用主色调 */
+    color: var(--primary-color);
+    /* 标题下方加一条装饰线 */
+    border-bottom: 3px solid var(--accent-color);
+    /* 内边距：标题和装饰线的间距 */
+    padding-bottom: 10px;
+    /* 左侧外边距：与左边的边框保持距离 */
+    margin-left: 10px;
+    /* 底部外边距：与内容分隔 */
+    margin-bottom: 25px;
+}
+
+/* ==================== 个人介绍卡片样式 ==================== */
+
+.card {
+    /* 白色背景 */
+    background: var(--card-bg);
+    /* 圆角边框 */
+    border-radius: 12px;
+    /* 阴影效果 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    /* 内边距 */
+    padding: 30px;
+    /* 使用弹性布局，使头像和信息并排显示 */
+    display: flex;
+    /* flex-wrap: wrap 允许内容换行，适配手机端 */
+    flex-wrap: wrap;
+    /* 水平方向：从左到右排列 */
+    justify-content: flex-start;
+    /* 交叉轴：居中对齐 */
+    align-items: flex-start;
+    /* gap：元素之间的间距 */
+    gap: 25px;
+}
+
+/* 头像样式 */
+.avatar {
+    /* 固定头像宽度 */
+    width: 120px;
+    /* 固定头像高度，与宽度相同形成正方形 */
+    height: 120px;
+    /* 圆角：50% 形成圆形 */
+    border-radius: 50%;
+    /* 背景色：使用次要色 */
+    background: var(--secondary-color);
+    /* 文字居中 */
+    text-align: center;
+    /* 弹性布局 */
+    display: flex;
+    /* 垂直水平居中 */
+    align-items: center;
+    justify-content: center;
+    /* 字体大小 */
+    font-size: 0.9rem;
+    /* 文字颜色：白色 */
+    color: white;
+    /* flex-shrink: 0 防止头像被压缩 */
+    flex-shrink: 0;
+}
+
+/* 信息区域样式 */
+.info {
+    /* flex: 1 表示占据剩余空间 */
+    flex: 1;
+    /* 最小宽度，防止内容被过度挤压 */
+    min-width: 250px;
+}
+
+.info p {
+    /* 每行信息之间留出间距 */
+    margin-bottom: 12px;
+}
+
+.info .description {
+    /* 自我介绍段落添加顶部外边距 */
+    margin-top: 20px;
+}
+
+/* ==================== 技能展示网格布局 ==================== */
+
+/* 技能网格容器：使用CSS Grid网格布局 */
+.skills-grid {
+    /* grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))
+       自动计算列数，每列最小220px，最大平分可用空间 */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    /* 网格元素之间的间距 */
+    gap: 20px;
+}
+
+/* 每个技能卡片的样式 */
+.skill-card {
+    /* 白色背景 */
+    background: var(--card-bg);
+    /* 圆角边框 */
+    border-radius: 10px;
+    /* 阴影效果 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    /* 内边距 */
+    padding: 25px;
+    /* 过渡效果：鼠标悬停时的动画时间 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 鼠标悬停技能卡片时的效果 */
+.skill-card:hover {
+    /* 向上移动3px */
+    transform: translateY(-3px);
+    /* 阴影加深 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.skill-card h3 {
+    /* 技能标题：使用主色调 */
+    color: var(--primary-color);
+    /* 下方外边距 */
+    margin-bottom: 10px;
+    /* 字号 */
+    font-size: 1.2rem;
+}
+
+.skill-card p {
+    /* 技能描述文字：次要色 */
+    color: var(--light-text);
+    /* 字号略小 */
+    font-size: 0.95rem;
+    /* 下方外边距 */
+    margin-bottom: 15px;
+}
+
+/* 技能进度条容器 */
+.skill-bar {
+    /* 进度条背景色 */
+    background: var(--border-color);
+    /* 高度 */
+    height: 10px;
+    /* 圆角 */
+    border-radius: 5px;
+    /* 溢出隐藏，防止进度条超出容器 */
+    overflow: hidden;
+}
+
+/* 技能进度条填充部分 */
+.skill-progress {
+    /* 高度100% */
+    height: 100%;
+    /* 背景色：渐变效果 */
+    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+    /* 圆角 */
+    border-radius: 5px;
+    /* 过渡动画：进度条长度变化时的动画效果 */
+    transition: width 0.5s ease;
+}
+
+/* ==================== 页脚样式 ==================== */
+
+.footer {
+    /* 深绿色背景 */
+    background: var(--primary-color);
+    /* 文字居中 */
+    text-align: center;
+    /* 内边距 */
+    padding: 30px 20px;
+    /* 文字颜色：白色 */
+    color: white;
+}
+
+.footer p {
+    /* 每行文字之间留出间距 */
+    margin-bottom: 8px;
+    /* 字号略小 */
+    font-size: 0.95rem;
+}
+
+.footer p:first-child {
+    /* 第一行文字加粗 */
+    font-weight: 600;
+}
+
+/* ==================== 响应式设计 - 手机端适配 ==================== */
+
+/* 当屏幕宽度小于768px时（手机端）应用以下样式 */
+@media screen and (max-width: 768px) {
+    .header h1 {
+        /* 手机端标题字号变小 */
+        font-size: 1.8rem;
+    }
+
+    .header .subtitle {
+        font-size: 1rem;
+    }
+
+    .header {
+        /* 手机端顶部区域内边距缩小 */
+        padding: 40px 20px;
+    }
+
+    .section h2 {
+        /* 手机端板块标题字号变小 */
+        font-size: 1.5rem;
+    }
+
+    .card {
+        /* 手机端卡片内容垂直排列 */
+        flex-direction: column;
+        /* 内容居中 */
+        align-items: center;
+        /* 内边距缩小 */
+        padding: 20px;
+    }
+
+    .avatar {
+        /* 手机端头像尺寸缩小 */
+        width: 100px;
+        height: 100px;
+    }
+
+    .info {
+        /* 手机端信息区域宽度100% */
+        width: 100%;
+        /* 文字居中 */
+        text-align: center;
+    }
+
+    .skills-grid {
+        /* 手机端每行只显示一个技能卡片 */
+        grid-template-columns: 1fr;
+    }
+}
